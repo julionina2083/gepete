@@ -34,7 +34,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
         return ask_utils.is_request_type("LaunchRequest")(handler_input)
 
     def handle(self, handler_input: HandlerInput) -> Response:
-        speak_output = "Sure, what is the question?"
+        speak_output = "Claro, cual es la pregunta?"
 
         chatgpt.reset_chat()
         # Uses the session_token to get a new bearer token
@@ -66,7 +66,7 @@ class QuestionIntentHandler(AbstractRequestHandler):
 
         return (
             handler_input.response_builder.speak(speak_output)
-            .ask("Can I help you any further?")
+            .ask("Puedo ayudarte con algo mas?")
             .response
         )
 
@@ -79,9 +79,9 @@ class HelpIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input: HandlerInput) -> Response:
         speak_output = "{} {}".format(
-            "I'm partnering with chat GPT by Open AI, \
-            to be able to answer anyquestions you have in a pertinent way!",
-            "How can I help?",
+            "Estas interactuando con chat GPT, \
+            por lo que soy capaz de responder cualquier pregunta de forma pertinente!",
+            "Como puedo ayudarte?",
         )
 
         return (
@@ -100,7 +100,7 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
         ) or ask_utils.is_intent_name("AMAZON.StopIntent")(handler_input)
 
     def handle(self, handler_input: HandlerInput) -> Response:
-        speak_output = "Goodbye!"
+        speak_output = "Adios!"
 
         return handler_input.response_builder.speak(speak_output).response
 
@@ -114,8 +114,8 @@ class FallbackIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input: HandlerInput) -> Response:
         logger.info("In FallbackIntentHandler")
 
-        speech = "Hmm, I'm not sure I understood correctly. Please try again."
-        reprompt = "I didn't catch that. What can I help you with?"
+        speech = "Creo que no te entendi correctamente. Porfavor intenta de nuevo."
+        reprompt = "No te capte. Como puedo ayudarte?"
 
         return handler_input.response_builder.speak(speech).ask(reprompt).response
 
@@ -170,7 +170,7 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
         logger.error(exception, exc_info=True)
 
         speak_output = "{} {}".format(
-            "Sorry, I had trouble doing what you asked.", "Please try again."
+            "Disculpa, tengo problemas para enteneder lo que preguntaste.", "Porfavor intenta de nuevo."
         )
 
         return (
