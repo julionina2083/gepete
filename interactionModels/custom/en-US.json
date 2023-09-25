@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "jee pee tee",
+      "invocationName": "preguntas complejas",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -27,21 +27,18 @@
             }
           ],
           "samples": [
-            "if {searchQuery}",
-            "for {searchQuery}",
-            "when {searchQuery}",
-            "who {searchQuery}",
-            "how {searchQuery}",
-            "the question {searchQuery}",
-            "about {searchQuery}",
-            "answer a question",
-            "to help me with something else",
-            "to help me with a question",
-            "to help me with something",
-            "a question",
-            "for a question",
-            "ask openAI a question",
-            "answer me a question"
+            "la pregunta es {searchQuery}",
+            "tengo una duda {searchQuery}",
+            "dime {searchQuery}",
+            "acerca {searchQuery}",
+            "responde una pregunta",
+            "responde una duda",
+            "ayudame con una pregunta",
+            "ayudame con una duda",
+            "ayudame con algo mas",
+            "ayudame con ago",
+            "una pregunta",
+            "una duda"
           ]
         },
         {
@@ -99,23 +96,19 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "What\u0027s up?"
+            "value": "Claro, como puedo ayudarte?"
           },
           {
             "type": "PlainText",
-            "value": "How can AI help you today?"
+            "value": "Cual es tu pregunta?"
           },
           {
             "type": "PlainText",
-            "value": "What is your question?"
+            "value": "Excelente, cual es tu pregunta?"
           },
           {
             "type": "PlainText",
-            "value": "Absolutely. What is your question?"
-          },
-          {
-            "type": "PlainText",
-            "value": "Sure. What\u0027s on your mind?"
+            "value": "Seguro, que tienes en mente?"
           }
         ]
       }
