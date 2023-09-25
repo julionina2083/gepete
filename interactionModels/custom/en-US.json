@@ -22,7 +22,7 @@
               "name": "searchQuery",
               "type": "AMAZON.SearchQuery",
               "samples": [
-                "{searchQuery}"
+                "hi {searchQuery}"
               ]
             }
           ],
